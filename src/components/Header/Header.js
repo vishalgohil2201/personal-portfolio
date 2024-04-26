@@ -3,7 +3,7 @@ import { FaGithub, FaLinkedinIn, FaRegEnvelope, FaRegFile, FaTwitter } from "rea
 import { IoCloseSharp, IoHomeOutline } from "react-icons/io5";
 import { FiUser } from "react-icons/fi";
 import { FaBarsStaggered } from 'react-icons/fa6';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { SiHyperskill } from 'react-icons/si';
 import { useDispatch } from 'react-redux';
 import { changeMode } from '../../redux/slices/modeSlice';
@@ -68,12 +68,12 @@ const Header = () => {
                     </div>
                     <nav id="navbar" className="nav-menu navbar">
                         <ul>
-                            <li><a className={`nav-link ${activeLink === '/' ? 'active' : ''}`} onClick={() => handleNavClick('/')}><IoHomeOutline /> <span>Home</span></a></li>
-                            <li><a className={`nav-link ${activeLink === '/about' ? 'active' : ''}`} onClick={() => handleNavClick('/about')}><FiUser /> <span>About</span></a></li>
-                            <li><a className={`nav-link ${activeLink === '/skills' ? 'active' : ''}`} onClick={() => handleNavClick('/skills')}><SiHyperskill /> <span>Skills</span></a></li>
-                            <li><a className={`nav-link ${activeLink === '/resume' ? 'active' : ''}`} onClick={() => handleNavClick('/resume')}><FaRegFile /> <span>Resume</span></a></li>
+                            <li><Link to='/' className={`nav-link ${activeLink === '/' ? 'active' : ''}`} onClick={() => handleNavClick('/')}><IoHomeOutline /> <span>Home</span></Link></li>
+                            <li><Link to='/about' className={`nav-link ${activeLink === '/about' ? 'active' : ''}`} onClick={() => handleNavClick('/about')}><FiUser /> <span>About</span></Link></li>
+                            <li><Link to='/skills' className={`nav-link ${activeLink === '/skills' ? 'active' : ''}`} onClick={() => handleNavClick('/skills')}><SiHyperskill /> <span>Skills</span></Link></li>
+                            <li><Link to='/resume' className={`nav-link ${activeLink === '/resume' ? 'active' : ''}`} onClick={() => handleNavClick('/resume')}><FaRegFile /> <span>Resume</span></Link></li>
                             {/* <li><a className={`nav-link ${activeLink === '/project' ? 'active' : ''}`} onClick={() => handleNavClick('/project')}><GoProjectRoadmap /> <span>Projects</span></a></li> */}
-                            <li><a className={`nav-link ${activeLink === '/contact' ? 'active' : ''}`} onClick={() => handleNavClick('/contact')}><FaRegEnvelope /> <span>Contact</span></a></li>
+                            <li><Link to='/contact' className={`nav-link ${activeLink === '/contact' ? 'active' : ''}`} onClick={() => handleNavClick('/contact')}><FaRegEnvelope /> <span>Contact</span></Link></li>
                         </ul>
                     </nav>
                     <div className='position-absolute bottom-0 start-0 text-center bottom-text w-100'>
