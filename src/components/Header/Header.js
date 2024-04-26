@@ -61,14 +61,14 @@ const Header = () => {
                         <div className="toggle-switch mx-auto mt-2">
                             <label className="switch-label">
                                 <input type="checkbox" className="checkbox" checked={isChecked} onChange={handleCheckboxChange} />
-                                <span className="slider" />
+                                <span className="slider" /> 
                             </label>
                         </div>
 
                     </div>
                     <nav id="navbar" className="nav-menu navbar">
                         <ul>
-                            <li><Link to='/' className={`nav-link ${activeLink === '/' ? 'active' : ''}`} onClick={() => handleNavClick('/')}><IoHomeOutline /> <span>Home</span></Link></li>
+                            <li><Link to='/' className={`nav-link ${activeLink === '/' ? 'active' : ''}`} onClick={() => handleNavClick('/')}><IoHomeOutline /> <span>HSome</span></Link></li>
                             <li><Link to='/about' className={`nav-link ${activeLink === '/about' ? 'active' : ''}`} onClick={() => handleNavClick('/about')}><FiUser /> <span>About</span></Link></li>
                             <li><Link to='/skills' className={`nav-link ${activeLink === '/skills' ? 'active' : ''}`} onClick={() => handleNavClick('/skills')}><SiHyperskill /> <span>Skills</span></Link></li>
                             <li><Link to='/resume' className={`nav-link ${activeLink === '/resume' ? 'active' : ''}`} onClick={() => handleNavClick('/resume')}><FaRegFile /> <span>Resume</span></Link></li>
