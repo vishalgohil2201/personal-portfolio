@@ -2,14 +2,14 @@ import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../src/style.css';
 import '../src/media-query.css';
-import Header from "./components/Header";
-import Home from "./components/Home";
+import Header from "./components/Header/Header";
+import Home from "./components/Home/Home";
 import { Route, Routes } from "react-router-dom";
-import About from "./components/About";
-import Resume from "./components/Resume";
-import Project from "./components/Project";
-import Contact from "./components/Contact";
-import Skill from "./components/Skills";
+import About from "./components/About/About";
+import Resume from "./components/Resume/Resume";
+// import Project from "./components/Project";
+import Contact from "./components/Contact/Contact";
+import Skill from "./components/Skills/Skills";
 
 function App() {
   return (

@@ -28,7 +28,7 @@ const Home = () => {
         <>
             <div className={`home ml-300 ${darkModeClass}`}>
                 <div className="box">
-                    <img src={require('../assets/software-developer.png')} alt="" />
+                    <img src={require('../../assets/software-developer.png')} alt="" />
                     <h1>Vishal Gohil</h1>
                     <p>I'm  <span className="typing-element"></span></p>
                 </div>

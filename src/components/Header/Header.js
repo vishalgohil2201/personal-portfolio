@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { FaGithub, FaInstagram, FaLinkedinIn, FaRegEnvelope, FaRegFile, FaTwitter } from "react-icons/fa";
+import { FaGithub, FaLinkedinIn, FaRegEnvelope, FaRegFile, FaTwitter } from "react-icons/fa";
 import { IoCloseSharp, IoHomeOutline } from "react-icons/io5";
 import { FiUser } from "react-icons/fi";
 import { FaBarsStaggered } from 'react-icons/fa6';
@@ -51,7 +51,7 @@ const Header = () => {
             }}>
                 <div className="d-flex flex-column position-relative h-100">
                     <div className="profile">
-                        <img src={require('../../src/assets/profile-img.jpeg')} alt="" className="img-fluid rounded-circle" />
+                        <img src={require('../../assets/profile-img.jpeg')} alt="" className="img-fluid rounded-circle" />
                         <h1><a href="a">Vishal Gohil</a></h1>
                         <div className="social-links mt-3 text-center">
                             <a href="https://github.com/vishalgohil2201"><FaGithub /></a>
