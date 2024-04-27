@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux';
 import Swal from 'sweetalert2';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
-// import axios from 'axios';
+import axios from 'axios';
 
 const Contact = () => {
   const initialvalues = {
@@ -29,14 +29,14 @@ const Contact = () => {
     validationSchema: validateSchema,
     onSubmit: async (values, { resetForm }) => {
       try {
-        // const response = await axios.post('http://localhost:3060/touchme', {
-        //   name: values.name,
-        //   email: values.email,
-        //   mobile_number: values.phone_number,
-        //   message: values.message
-        // });
+        const response = await axios.post('https://personal-portfolio-api-gyii.onrender.com/touchme', {
+          name: values.name,
+          email: values.email,
+          mobile_number: values.phone_number,
+          message: values.message
+        });
 
-        // console.log(response);
+        console.log(response);
 
         Swal.fire({
           title: 'Submitted..!',
