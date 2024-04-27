@@ -226,6 +226,8 @@ header .bottom-text p {
   --------------------------------------------------------------*/
 .about {
   background-color: var(--white);
+  border-bottom: 1px solid var(--black);
+  border-top: 1px solid var(--black);
 }
 
 .about .my-about {
@@ -247,8 +249,12 @@ strong {
 
 
 /*--------------------------------------------------------------
-  # Skills Menu
-  --------------------------------------------------------------*/
+# Skills Menu
+--------------------------------------------------------------*/
+.skills {
+  border-bottom: 1px solid var(--black);
+}
+
 .skills .main-box h3 {
   font-weight: 700;
 }
@@ -280,6 +286,9 @@ strong {
 /*--------------------------------------------------------------
   # Resume Menu
   --------------------------------------------------------------*/
+.resume {
+  border-bottom: 1px solid var(--black);
+}
 
 .resume .box {
   transform: translatey(-200px);
@@ -460,6 +469,29 @@ strong {
 }
 
 
+/* Scroll On Top Button */
+.scroll-top {
+  height: 45px;
+  width: 45px;
+  background-color: var(--black);
+  position: fixed;
+  bottom: 5%;
+  right: 6%;
+  border-radius: 50%;
+  box-shadow: 0px 0px 5px #474747;
+  color: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.scroll-top:hover {
+  transform: scale(1.1);
+}
+
 /*--------------------------------------------------------------
   # Dark Mode Menus
   --------------------------------------------------------------*/
@@ -498,6 +530,8 @@ strong {
 /* about */
 .about-dark-mode {
   background-color: var(--black);
+  border-bottom: 1px solid var(--white);
+  border-top: 1px solid var(--white);
 }
 
 .about-dark-mode .my-about p {
@@ -523,6 +557,7 @@ strong {
 /* Skills */
 .skills-dark-mode {
   background-color: var(--black);
+  border-bottom: 1px solid var(--white);
 }
 
 .skills-dark-mode .main-box h3 {
@@ -544,6 +579,7 @@ strong {
 /* resume */
 .resume-dark-mode {
   background-color: var(--black);
+  border-bottom: 1px solid var(--white);
 }
 
 .resume-dark-mode .box .btn-2 {
@@ -616,4 +652,11 @@ strong {
   border: 0;
   padding: 5px 10px;
   border-radius: 5px;
+}
+
+/* Scroll On Stop Dark Mode */
+.scroll-dark-mode {
+  background-color: var(--white);
+  color: var(--black);
+  box-shadow: 0px 0px 5px #d7d7d7;
 }

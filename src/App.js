@@ -14,7 +14,7 @@ import Skill from "./components/Skills/Skills";
 function App() {
   return (
     <>
-      <div className="d-flex">
+      <div className="d-flex flex-wrap">
         <Header></Header>
         <Routes>
           <Route path="/" element={<Home />}></Route>
