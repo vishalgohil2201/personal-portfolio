@@ -4,10 +4,12 @@ import { FaLocationDot } from 'react-icons/fa6';
 import { MdEmail } from 'react-icons/md';
 import SectionTitle from '../../common component/SectionTitle';
 import { useSelector } from 'react-redux';
-import Swal from 'sweetalert2';
+// import Swal from 'sweetalert2';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
 import axios from 'axios';
+import 'react-toastify/dist/ReactToastify.css';
+import { Bounce, toast } from 'react-toastify';
 
 const Contact = () => {
   const initialvalues = {
@@ -29,24 +31,41 @@ const Contact = () => {
     validationSchema: validateSchema,
     onSubmit: async (values, { resetForm }) => {
       try {
-        const response = await axios.post('https://personal-portfolio-api-gyii.onrender.com/touchme', {
-          name: values.name,
-          email: values.email,
-          mobile_number: values.phone_number,
-          message: values.message
-        });
-
-        console.log(response);
-
-        Swal.fire({
-          title: 'Submitted..!',
-          text: 'Form submitted successfully!',
-          icon: 'success',
-          buttonsStyling: false,
-          customClass: {
-            confirmButton: 'swal-button-custom'
+        toast.promise(
+          axios.post('https://personal-portfolio-api-gyii.onrender.com/touchme', {
+            name: values.name,
+            email: values.email,
+            mobile_number: values.phone_number,
+            message: values.message
+          })
+            .then(response => {
+              return response.data;
+            })
+            .catch(error => {
+              throw error.response.data;
+            }),
+          {
+            pending: "Loading...",
+            success: "Successfully send message..!",
+            error: "Error received..!"
+          },
+          {
+            position: 'top-center',
+            autoClose: 3000,
+            transition: Bounce
           }
-        });
+        );
+
+
+        // Swal.fire({
+        //   title: 'Submitted..!',
+        //   text: 'Form submitted successfully!',
+        //   icon: 'success',
+        //   buttonsStyling: false,
+        //   customClass: {
+        //     confirmButton: 'swal-button-custom'
+        //   }
+        // });
 
         resetForm();
       } catch (error) {

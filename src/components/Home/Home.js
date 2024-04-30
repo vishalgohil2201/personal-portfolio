@@ -27,6 +27,7 @@ const Home = () => {
             typed.destroy();
         };
     }, []);
+    <p>I'm  <span className="typing-element"></span></p>
 
     useEffect(() => {
         const handleScroll = () => {
