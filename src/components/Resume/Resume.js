@@ -7,8 +7,8 @@ import { useSelector } from 'react-redux';
 const Resume = () => {
   let modeType = useSelector((state) => state.mode.modeValue);
   let darkModeClass = (modeType) ? "resume-dark-mode" : "";
-  let showUrl = 'https://drive.google.com/file/d/1CGn_zIBKjYp-zAiKq9L9Pmx0dOcKX35h/view?usp=sharing';
-  let downloadUrl = "https://drive.google.com/uc?export=download&id=1CGn_zIBKjYp-zAiKq9L9Pmx0dOcKX35h";
+  let showUrl = 'https://drive.google.com/file/d/1GkAYOIH-Kgq_URfFwXHStf5Ki48zhr3p/view?usp=sharing';
+  let downloadUrl = "https://drive.google.com/uc?export=download&id=1GkAYOIH-Kgq_URfFwXHStf5Ki48zhr3p";
   return (
     <>
       <section className={`p-5 px-md-5 py-sm-5 px-xl-5 resume ml-300 d-flex flex-column justify-content-between ${darkModeClass}`}>
