@@ -6,7 +6,7 @@ const Skills = () => {
   let modeType = useSelector((state) => state.mode.modeValue);
   let darkModeClass = (modeType) ? "skills-dark-mode" : "";
   return (
-    <section className={`skills ml-300 h-100 ${darkModeClass}`}>
+    <section className={`skills ml-300 h-100 ${darkModeClass}`} id='skills-page'>
       <div className='p-3 px-md-5 py-sm-5 px-xl-5 '>
         <SectionTitle title={"Skills"}></SectionTitle>
         <div className="main-box frontend-box">

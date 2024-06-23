@@ -9,7 +9,7 @@ const About = () => {
     let darkModeClass = (modeType) ? "about-dark-mode" : '';
     return (
         <>
-            <section className={`ml-300 about d-md-flex align-items-center ${darkModeClass}`}>
+            <section className={`ml-300 about d-md-flex align-items-center ${darkModeClass}`} id='about-page'>
                 <div className='p-4 px-md-5 py-sm-5 px-xl-5'>
                     <SectionTitle title={"About"}></SectionTitle>
                     <div className='my-about'>

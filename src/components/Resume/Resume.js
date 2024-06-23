@@ -11,8 +11,7 @@ const Resume = () => {
   let downloadUrl = "https://drive.google.com/uc?export=download&id=1GkAYOIH-Kgq_URfFwXHStf5Ki48zhr3p";
   return (
     <>
-      <section className={`p-5 px-md-5 py-sm-5 px-xl-5 resume ml-300 d-flex flex-column justify-content-between ${darkModeClass}`}>
-
+      <section className={`p-5 px-md-5 py-sm-5 px-xl-5 resume ml-300 d-flex flex-column justify-content-between ${darkModeClass}`} id='resume-page'>
         <SectionTitle title={"Resume Source"}></SectionTitle>
         <div className='box d-flex flex-column flex-sm-row align-items-center justify-content-center'>
           <div>

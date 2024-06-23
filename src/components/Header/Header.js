@@ -3,7 +3,8 @@ import { FaGithub, FaLinkedinIn, FaRegEnvelope, FaRegFile, FaTwitter } from "rea
 import { IoCloseSharp, IoHomeOutline } from "react-icons/io5";
 import { FiUser } from "react-icons/fi";
 import { FaBarsStaggered } from 'react-icons/fa6';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+// import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { SiHyperskill } from 'react-icons/si';
 import { useDispatch } from 'react-redux';
 import { changeMode } from '../../redux/slices/modeSlice';
@@ -12,16 +13,18 @@ const Header = () => {
 
     const dispatch = useDispatch();
     const location = useLocation();
-    const currentURL = location.pathname;
-
+    const currentURL = location.hash;
+    let [url, setUrl] = useState(location.hash);
+    console.log(currentURL);
     const [temp, setTemp] = useState(false);
-    const [activeLink, setActiveLink] = useState("");
+    // const [activeLink, setActiveLink] = useState("");
     const [isChecked, setIsChecked] = useState(false);
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
+
 
     useEffect(() => {
-        setActiveLink(currentURL);
-        localStorage.clear('activeLink');
+        setUrl(currentURL);
+        // localStorage.clear('activeLink');
     }, [currentURL]);
 
     useEffect(() => {
@@ -32,10 +35,10 @@ const Header = () => {
         setTemp(!temp);
     };
 
-    const handleNavClick = (link) => {
-        navigate(link);
-        openSlideBar();
-    };
+    // const handleNavClick = (link) => {
+    //     navigate(link);
+    //     openSlideBar();
+    // };
 
     const handleCheckboxChange = () => {
         setIsChecked(!isChecked);
@@ -61,19 +64,17 @@ const Header = () => {
                         <div className="toggle-switch mx-auto mt-2">
                             <label className="switch-label">
                                 <input type="checkbox" className="checkbox" checked={isChecked} onChange={handleCheckboxChange} />
-                                <span className="slider" /> 
+                                <span className="slider" />
                             </label>
                         </div>
-
                     </div>
                     <nav id="navbar" className="nav-menu navbar">
                         <ul>
-                            <li><Link to='/' className={`nav-link ${activeLink === '/' ? 'active' : ''}`} onClick={() => handleNavClick('/')}><IoHomeOutline /> <span>Home</span></Link></li>
-                            <li><Link to='/about' className={`nav-link ${activeLink === '/about' ? 'active' : ''}`} onClick={() => handleNavClick('/about')}><FiUser /> <span>About</span></Link></li>
-                            <li><Link to='/skills' className={`nav-link ${activeLink === '/skills' ? 'active' : ''}`} onClick={() => handleNavClick('/skills')}><SiHyperskill /> <span>Skills</span></Link></li>
-                            <li><Link to='/resume' className={`nav-link ${activeLink === '/resume' ? 'active' : ''}`} onClick={() => handleNavClick('/resume')}><FaRegFile /> <span>Resume</span></Link></li>
-                            {/* <li><a className={`nav-link ${activeLink === '/project' ? 'active' : ''}`} onClick={() => handleNavClick('/project')}><GoProjectRoadmap /> <span>Projects</span></a></li> */}
-                            <li><Link to='/contact' className={`nav-link ${activeLink === '/contact' ? 'active' : ''}`} onClick={() => handleNavClick('/contact')}><FaRegEnvelope /> <span>Contact</span></Link></li>
+                            <li><a href='#home-page' className={`nav-link ${(url === '#home-page' || url === '') ? 'active' : ''}`}><IoHomeOutline /> <span>Home</span></a></li>
+                            <li><a href='#about-page' className={`nav-link ${url === '#about-page' ? 'active' : ''}`}><FiUser /> <span>About</span></a></li>
+                            <li><a href='#skills-page' className={`nav-link ${url === '#skills-page' ? 'active' : ''}`}><SiHyperskill /> <span>Skills</span></a></li>
+                            <li><a href='#resume-page' className={`nav-link ${url === '#resume-page' ? 'active' : ''}`} ><FaRegFile /> <span>Resume</span></a></li>
+                            <li><a href='#contact-page' className={`nav-link ${url === '#contact-page' ? 'active' : ''}`} ><FaRegEnvelope /> <span>Contact</span></a></li>
                         </ul>
                     </nav>
                     <div className='position-absolute bottom-0 start-0 text-center bottom-text w-100'>

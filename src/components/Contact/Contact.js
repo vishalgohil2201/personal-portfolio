@@ -32,7 +32,7 @@ const Contact = () => {
     onSubmit: async (values, { resetForm }) => {
       try {
         toast.promise(
-          axios.post('https://personal-portfolio-api-gyii.onrender.com/touchme', {
+          axios.post(`${process.env.REACT_APP_BASE_URL}/touchme`, {
             name: values.name,
             email: values.email,
             mobile_number: values.phone_number,
@@ -79,7 +79,7 @@ const Contact = () => {
 
   return (
     <>
-      <div className={`contact ml-300 ${darkModeClass}`}>
+      <section className={`contact ml-300 ${darkModeClass}`} id='contact-page'>
         <div className='p-4 px-md-5 py-sm-5 px-xl-5 h-100'>
           <SectionTitle title={'Contact'}></SectionTitle>
           <div className='row mt-3' data-aos='fade-in'>
@@ -178,7 +178,7 @@ const Contact = () => {
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </>
   );
 };

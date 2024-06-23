@@ -55,7 +55,7 @@ const Home = () => {
 
     return (
         <>
-            <section className={`home ml-300 ${darkModeClass}`}>
+            <section className={`home ml-300 ${darkModeClass}`} id='home-page'>
                 <div className="box">
                     <img src={require('../../assets/software-developer.png')} alt="" />
                     <h1>Vishal Gohil</h1>

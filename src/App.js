@@ -10,8 +10,8 @@ import Resume from "./components/Resume/Resume";
 // import Project from "./components/Project";
 import Contact from "./components/Contact/Contact";
 import Skill from "./components/Skills/Skills";
-
 function App() {
+
   return (
     <>
       <div className="d-flex flex-wrap">
