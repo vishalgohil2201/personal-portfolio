@@ -35,7 +35,7 @@ const Contact = () => {
           axios.post(`${process.env.REACT_APP_BASE_URL}/touchme`, {
             name: values.name,
             email: values.email,
-            mobile_number: values.phoneNumber,
+            phoneNumber: values.phoneNumber,
             message: values.message
           })
             .then(response => {
