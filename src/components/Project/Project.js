@@ -5,7 +5,7 @@ const Project = () => {
         <>
             <div className='ml-300'>
                 Project
-            </div>
+            </div> 
         </>
     )
 }
