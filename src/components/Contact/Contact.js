@@ -15,14 +15,14 @@ const Contact = () => {
   const initialvalues = {
     name: '',
     email: '',
-    phone_number: '',
+    phoneNumber: '',
     message: ''
   };
 
   const validateSchema = yup.object({
     name: yup.string().required('Name must be required..!'),
     email: yup.string().required('Email must be required..!').email('Invalid email format'),
-    phone_number: yup.string().required('Phone number must be required..!').matches(/^([0|+[0-9]{1,5})?([7-9][0-9]{9})$/, 'Invalid phone number'),
+    phoneNumber: yup.string().required('Phone number must be required..!').matches(/^([0|+[0-9]{1,5})?([7-9][0-9]{9})$/, 'Invalid phone number'),
     message: yup.string().required('Message must be required..!')
   });
 
@@ -35,7 +35,7 @@ const Contact = () => {
           axios.post(`${process.env.REACT_APP_BASE_URL}/touchme`, {
             name: values.name,
             email: values.email,
-            mobile_number: values.phone_number,
+            mobile_number: values.phoneNumber,
             message: values.message
           })
             .then(response => {
@@ -55,18 +55,6 @@ const Contact = () => {
             transition: Bounce
           }
         );
-
-
-        // Swal.fire({
-        //   title: 'Submitted..!',
-        //   text: 'Form submitted successfully!',
-        //   icon: 'success',
-        //   buttonsStyling: false,
-        //   customClass: {
-        //     confirmButton: 'swal-button-custom'
-        //   }
-        // });
-
         resetForm();
       } catch (error) {
         console.error('Error submitting form:', error);
@@ -118,14 +106,14 @@ const Contact = () => {
                   <input
                     type='text'
                     className='form-control'
-                    name='phone_number'
-                    id='phone_number'
-                    value={values.phone_number}
+                    name='phoneNumber'
+                    id='phoneNumber'
+                    value={values.phoneNumber}
                     onChange={handleChange}
                     onBlur={handleBlur}
                   />
-                  {errors.phone_number && touched.phone_number ? (
-                    <span className='error-text text-danger'>{errors.phone_number}</span>
+                  {errors.phoneNumber && touched.phoneNumber ? (
+                    <span className='error-text text-danger'>{errors.phoneNumber}</span>
                   ) : null}
                 </div>
                 <div className='form-group'>
